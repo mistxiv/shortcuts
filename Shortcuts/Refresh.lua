@@ -9,6 +9,8 @@ local tbl = function()
    MistDogTag = nil
    MistUtility = nil
    MistPrompto = nil
+   SmiletonBoss1 = nil
+   SmiletonBoss3 = nil
 
    if KitanoiFuncs ~= nil then
       if KitanoiSettings.SelectedDungeonList == 2 then -- "Your Custom Profiles"
