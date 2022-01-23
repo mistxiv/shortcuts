@@ -1,7 +1,7 @@
 local tbl = function()
    if SmiletonBoss1 == nil then
       SmiletonBoss1 = {
-         revision = 6,
+         revision = 2,
          buff_smiley_face = 2763,
          buff_frowny_face = 2764,
          channel_frowny_face = 26422,

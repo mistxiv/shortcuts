@@ -1,7 +1,7 @@
 local tbl = function()
    if SmiletonBoss3 == nil then
       SmiletonBoss3 = {
-         revision = 5,
+         revision = 2,
          entity_big_cheese = 10336,
          ne_sw_safe_pattern = "064128",
          nw_se_safe_pattern = "164128",
@@ -72,13 +72,13 @@ local tbl = function()
             bomb_compass = "sw"
             sb3.sw.safe = false
          end
-         sb3.log("ebomb | " .. i .. " | XYZ " .. bomb.pos.x .. " " .. bomb.pos.y .. " " .. bomb.pos.z ..
-                    " | " .. bomb_compass)
+         sb3.log("ebomb | " .. i .. " | XYZ " .. bomb.pos.x .. " " .. bomb.pos.y .. " " .. bomb.pos.z .. " | " ..
+                    bomb_compass)
          if (KitanoiFuncs.puddledata[i] == nil) then
             KitanoiFuncs.puddledata[i] = {
                entity = bomb,
                pos = bomb.pos,
-               radius = 6,
+               radius = 8,
                duration = Now() + 30000,
             }
          end
@@ -87,10 +87,6 @@ local tbl = function()
 
    if (sme[sb3.ne_sw_safe_pattern] and TimeSince(sme[sb3.ne_sw_safe_pattern].timeadded) <= sb3.mechanics_resolution_ms) then
       sb3.log("detected ne/sw safe pattern")
-      -- if (KitanoiFuncs.ArgusIsCasting(sb3.channel_right_disassembler)) then
-      --    sb3.log("right disassembler channeling")
-      --    sb3.sw.safe = false
-      -- end
       if (sb3.sw.safe == true) then
          sb3.log("moving to sw safe spot")
          Player:MoveTo(sb3.sw.pos.x, sb3.sw.pos.y, sb3.sw.pos.z)
@@ -103,10 +99,6 @@ local tbl = function()
 
    if (sme[sb3.nw_se_safe_pattern] and TimeSince(sme[sb3.nw_se_safe_pattern].timeadded) <= sb3.mechanics_resolution_ms) then
       sb3.log("detected nw/se safe pattern")
-      -- if (KitanoiFuncs.ArgusIsCasting(sb3.channel_left_disassembler)) then
-      --    sb3.log("left disassembler channeling")
-      --    sb3.nw.safe = false
-      -- end
       if (sb3.nw.safe == true) then
          sb3.log("moving to nw safe spot")
          Player:MoveTo(sb3.nw.pos.x, sb3.nw.pos.y, sb3.nw.pos.z)
