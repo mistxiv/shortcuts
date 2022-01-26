@@ -34,13 +34,13 @@ local tbl = function()
    local is_frowny = TensorCore.hasBuff(p.id, sb1.buff_frowny_face)
 
    if (mixed_feelings_channeling) then
-      if ((is_smiley or is_frowny) and Now() > KitanoiSettings.avoidingtime) then
-         sb1.log("not avoiding mixed feelings because it's smiley/frowny time")
-         KitanoiSettings.DFIndexedExcludeAvoid[sb1.channel_mixed_feelings] = true
-      else
-         sb1.log("avoiding mixed feelings")
-         KitanoiSettings.DFIndexedExcludeAvoid[sb1.channel_mixed_feelings] = nil
-      end
+      -- if ((is_smiley or is_frowny) and Now() > KitanoiSettings.avoidingtime) then
+      --    sb1.log("not avoiding mixed feelings because it's smiley/frowny time")
+      --    KitanoiSettings.DFIndexedExcludeAvoid[sb1.channel_mixed_feelings] = true
+      -- else
+      --    sb1.log("avoiding mixed feelings")
+      --    KitanoiSettings.DFIndexedExcludeAvoid[sb1.channel_mixed_feelings] = nil
+      -- end
 
       if (lawn_channeling) then
          if (lawn_caster.pos.z == -5) then
