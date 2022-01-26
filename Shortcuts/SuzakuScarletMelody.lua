@@ -83,7 +83,7 @@ local tbl = function()
          Player:SetFacing(ssm.facings[ssm.facings_idx])
          ssm.facings_idx = (ssm.facings_idx % #ssm.facings) + 1
       end
-      KitanoiFuncs.AvoidingTime = Now()
+      KitanoiSettings.avoidingtime = Now()
    end
    ssm.last_run = Now()
 end
